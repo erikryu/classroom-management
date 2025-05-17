@@ -1,4 +1,4 @@
-package classroom;
+package classroom.model;
 
 import java.util.ArrayList;
 import java.util.List;
