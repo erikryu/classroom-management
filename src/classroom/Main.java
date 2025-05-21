@@ -1,5 +1,7 @@
-package classroom.model;
+package classroom;
 
+import classroom.model.Turma;
+import classroom.model.Professor;
 import java.util.ArrayList;
 import java.util.List;
 
