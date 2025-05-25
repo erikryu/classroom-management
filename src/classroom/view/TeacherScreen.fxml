@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classroom.controller.TeacherController">
+   <children>
+      <VBox layoutX="14.0" layoutY="77.0" prefHeight="330.0" prefWidth="551.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="442.0" text="PROFESSOR-LANÇAMENTOS DE NOTAS">
+               <font>
+                  <Font name="System Italic" size="22.0" />
+               </font></Label>
+            <Label fx:id="comboUC" text="UC">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Label>
+            <ComboBox prefHeight="26.0" prefWidth="130.0" promptText="SELECIONAR UC" />
+            <HBox prefHeight="91.0" prefWidth="514.0">
+               <children>
+                  <TableView fx:id="tabelaAlunos" prefHeight="91.0" prefWidth="550.0">
+                    <columns>
+                      <TableColumn fx:id="colNome" prefWidth="63.99999696016312" text="ALUNO" />
+                        <TableColumn fx:id="colRa" prefWidth="72.800048828125" text="RA" />
+                        <TableColumn fx:id="colA1" minWidth="0.0" prefWidth="91.99993896484375" text="A1" />
+                        <TableColumn fx:id="colA2" prefWidth="59.20001220703125" text="A2" />
+                        <TableColumn fx:id="colA3" prefWidth="75.199951171875" text="A3" />
+                        <TableColumn fx:id="colNotaFinal" prefWidth="66.4000244140625" text="NotaFinal" />
+                        <TableColumn fx:id="colFaltas" prefWidth="120.0" text="FALTAS" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <Button fx:id="btnSalvar" mnemonicParsing="false" onAction="#SalvarAluno" text="Salvar" textFill="#df0000" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
