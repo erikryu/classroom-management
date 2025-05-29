@@ -1,45 +1,32 @@
-package classroom.model;
+package classroom.model.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Professor {
     private final String nome;
-    private final List<Turma> turmas;
+    private final String pcode;
+    private final List<Disciplina> disciplinas;
     
-    Professor(String nome){
+    public Professor(String nome, String pcode){
         this.nome = nome;
-        this.turmas = new ArrayList<>();
+        this.pcode = pcode;
+        this.disciplinas = new ArrayList<>();
     }
     
     public String getNome(){
         return nome;
     }
     
-    public List<Turma> getTurmas(){
-        return turmas;
+    public String getPcode(){
+        return pcode;
     }
     
-    public void addTurma(Turma turma){
-        turmas.add(turma);
+    public List<Disciplina> getDisciplinas(){
+        return disciplinas;
     }
     
-    public void addAlunoTurma(Turma turma, Aluno aluno){
-        if (turmas.contains(turma)) {
-            turma.adicionarAluno(aluno);
-        }
-    }
-    
-    public void addPresente(Turma turma, Aluno aluno){
-        if (turmas.contains(turma) && turma.getAlunos().contains(aluno)){
-            aluno.setPresenca();
-        }
-    }
-    
-    public void addFalta(Turma turma, Aluno aluno){
-        if (turmas.contains(turma) && turma.getAlunos().contains(aluno)){
-            aluno.setFalta();
-        }
-    }
-    
+    public void escolherDisciplina(Disciplina disciplina){
+        disciplinas.add(disciplina);
+    }    
 }

@@ -1,5 +1,9 @@
 package classroom.controller;
 
+import classroom.model.entidades.Aluno;
+import classroom.model.dao.AlunoDAO;
+import classroom.model.entidades.Disciplina;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -34,7 +38,8 @@ public class TeacherController {
     @FXML
     private Button btnSalvar;
 
-    private ObservableList<Aluno> listaAlunos = FXCollections.observableArrayList();
+    private ObservableList<Aluno> listaAlunos = FXCollections.observableArrayList().;
+    private ObservableList<Disciplina> listaDeDisciplinas = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
@@ -43,9 +48,9 @@ public class TeacherController {
 
         // Simulando lista de alunos
         listaAlunos.addAll(
-            new Aluno("João", "123", 7.0, 8.0, 9.0),
-            new Aluno("Maria", "456", 6.5, 7.0, 8.0),
-            new Aluno("Carlos", "789", 5.0, 6.0, 7.0)
+            new Aluno("João", "123"),
+            new Aluno("Maria", "456"),
+            new Aluno("Carlos", "789")
         );
 
         // Ligando colunas às propriedades
@@ -69,7 +74,7 @@ public class TeacherController {
         alert.setContentText("Dados dos alunos salvos com sucesso!");
         alert.showAndWait();
     }
-
+/*
     // Classe interna representando o aluno (temporária)
     public static class Aluno {
         private final SimpleStringProperty nome;
@@ -94,5 +99,5 @@ public class TeacherController {
         public DoubleProperty a2Property() { return a2; }
         public DoubleProperty a3Property() { return a3; }
         public DoubleProperty notaFinalProperty() { return notaFinal; }
-    }
+    }*/
 }

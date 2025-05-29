@@ -1,27 +1,26 @@
-package classroom.model;
+package classroom.model.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Turma {
-    private final String disciplina;
-    private final Professor professor;
+    private final String nome;
+    private final String tcode;
+    private final Disciplina disciplina;
     private final List<Aluno> alunos;
     
-    Turma(String disciplina, Professor professor)
+    public Turma(String nome, String tcode)
     {
-        this.disciplina = disciplina;
-        this.professor = professor;
+        this.nome = nome;
+        this.tcode = tcode;
+        this.disciplina = null;
         this.alunos = new ArrayList<>();
     }
     
-    public String getDisciplina(){
+    public Disciplina getDisciplina(){
         return disciplina;
     }
-    
-    public Professor getProfessor(){
-        return professor;
-    }
+
     
     public List<Aluno> getAlunos(){
         return alunos;

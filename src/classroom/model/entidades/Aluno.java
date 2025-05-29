@@ -1,4 +1,4 @@
-package classroom.model;
+package classroom.model.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +9,15 @@ public class Aluno {
     private int presente;
     private int faltante;
     private final List<Integer> notas;
+    private final List<Turma> turmas;
     
-    Aluno(String ra, String nome){
+    public Aluno(String ra, String nome){
         this.ra = ra;
         this.nome = nome;
         this.presente = 0;
         this.faltante = 0;
         this.notas = new ArrayList<>();
+        this.turmas = new ArrayList<>();
     }
     
     //Retorna RA do aluno
@@ -44,6 +46,19 @@ public class Aluno {
     
     public void setFalta(){
         faltante++;
+    }
+    
+    public void escolherTurma(Turma turma){
+        if (turmas.size()<3 && !turmas.contains(turma))
+        {
+            turmas.add(turma);
+        }
+    }
+    
+    public void sairDaTurma(Turma turma){
+        if (turmas.size() - 1 > 1){
+            turmas.remove(turma);
+        }
     }
     
     public void addNota(int nota) {
