@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.beans.property.SimpleObjectProperty;
 
 public class TeacherController {
 
@@ -38,7 +39,7 @@ public class TeacherController {
     @FXML
     private Button btnSalvar;
 
-    private ObservableList<Aluno> listaAlunos = FXCollections.observableArrayList().;
+    private ObservableList<Aluno> listaAlunos = FXCollections.observableArrayList();
     private ObservableList<Disciplina> listaDeDisciplinas = FXCollections.observableArrayList();
 
     @FXML
@@ -48,18 +49,18 @@ public class TeacherController {
 
         // Simulando lista de alunos
         listaAlunos.addAll(
-            new Aluno("João", "123"),
-            new Aluno("Maria", "456"),
-            new Aluno("Carlos", "789")
+            new Aluno("João", "123",0.0,0.0,0.0),
+            new Aluno("Maria", "456", 0.0,0.0,0.0),
+            new Aluno("Carlos", "789", 0.0,0.0,0.0)
         );
 
         // Ligando colunas às propriedades
-        colNome.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
-        colRA.setCellValueFactory(cellData -> cellData.getValue().raProperty());
-        colA1.setCellValueFactory(cellData -> cellData.getValue().a1Property().asObject());
-        colA2.setCellValueFactory(cellData -> cellData.getValue().a2Property().asObject());
-        colA3.setCellValueFactory(cellData -> cellData.getValue().a3Property().asObject());
-        colNotaFinal.setCellValueFactory(cellData -> cellData.getValue().notaFinalProperty().asObject());
+        colNome.setCellValueFactory(cellData -> new SimpleObjectProperty(cellData.getValue() .getNome()));
+        colRA.setCellValueFactory(cellData -> new SimpleObjectProperty(cellData.getValue().getRa()));
+        colA1.setCellValueFactory(cellData -> new SimpleObjectProperty(cellData.getValue().getA1()));
+        colA2.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getA2()));
+        colA3.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getA3()));
+        colNotaFinal.setCellValueFactory(cellData -> new SimpleObjectProperty(cellData.getValue().getNotaFinal()));
 
         // Preenchendo a tabela
         tableAlunos.setItems(listaAlunos);

@@ -64,8 +64,16 @@ public class AlunoDAO {
                 ResultSet rs = stmt.executeQuery();
                 
                 while (rs.next()){
-                    Aluno aluno = new Aluno(rs.getString("ra"), 
-                        rs.getString("nome"));
+                    Aluno aluno = new Aluno(
+                    rs.getString("nome"),
+                    rs.getString("ra"),
+                    rs.getDouble("a1"),
+                    rs.getDouble("a2"),
+                    rs.getDouble("a3")
+                    );
+                    
+                           
+                    
                     
                     alunos.add(aluno);
                 }
@@ -88,7 +96,13 @@ public class AlunoDAO {
 
                 ResultSet rs = stmt.executeQuery();
                 if (rs.next()){
-                    aluno = new Aluno(rs.getString("ra"), rs.getString("nome"));
+                    aluno = new Aluno(
+                            rs.getString("nome"),
+                            rs.getString("ra"),
+                            rs.getDouble("a1"),
+                            rs.getDouble("a2"),
+                            rs.getDouble("a3")
+                     );
                 }
             } catch (SQLException e){
                 System.out.println(e.getMessage());
