@@ -1,5 +1,7 @@
 package classroom.model.entidades;
 
+import classroom.model.entidades.Disciplina;
+
 import java.util.ArrayList;
 import java.util.List;
 
