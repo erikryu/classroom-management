@@ -72,9 +72,6 @@ public class AlunoDAO {
                     rs.getDouble("a3")
                     );
                     
-                           
-                    
-                    
                     alunos.add(aluno);
                 }
                 
@@ -102,7 +99,7 @@ public class AlunoDAO {
                             rs.getDouble("a1"),
                             rs.getDouble("a2"),
                             rs.getDouble("a3")
-                     );
+                    );
                 }
             } catch (SQLException e){
                 System.out.println(e.getMessage());

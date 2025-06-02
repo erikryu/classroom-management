@@ -1,14 +1,16 @@
 package classroom.model.entidades;
 
+import classroom.model.entidades.Turma;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Aluno {
     private final String ra;
     private final String nome;
-    private final Double a1;
-    private final Double a2;
-    private final Double a3;
+    private final double a1;
+    private final double a2;
+    private final double a3;
     private int presente;
     private int faltante;
     private final List<Integer> notas;
