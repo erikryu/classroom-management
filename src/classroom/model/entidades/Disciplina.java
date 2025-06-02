@@ -1,5 +1,8 @@
 package classroom.model.entidades;
 
+import classroom.model.entidades.Professor;
+import classroom.model.entidades.Turma;
+
 import java.util.List;
 import java.util.ArrayList;
 
